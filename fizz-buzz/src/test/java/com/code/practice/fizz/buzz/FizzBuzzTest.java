@@ -15,7 +15,14 @@ public class FizzBuzzTest {
     return Stream.of(
         Arguments.of("Fizz", 3),
         Arguments.of("Buzz", 5),
-        Arguments.of("Whizz", 7));
+        Arguments.of("Whizz", 7),
+        Arguments.of("Buzz", 15),
+        Arguments.of("FizzWhizz", 21),
+        Arguments.of("Fizz", 13),
+        Arguments.of("Fizz", 30),
+        Arguments.of("BuzzWhizz", 35),
+        Arguments.of("Fizz", 75)
+    );
   }
 
   @Test
