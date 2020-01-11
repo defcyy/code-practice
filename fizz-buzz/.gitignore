@@ -28,3 +28,6 @@ build
 
 
 .idea/
+fizz-buzz.iml
+fizz-buzz.ipr
+fizz-buzz.iws
