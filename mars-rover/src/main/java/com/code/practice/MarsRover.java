@@ -8,12 +8,13 @@ public class MarsRover {
   }
 
   public static MarsRover initialize(InitializeCommand command) {
-    return new MarsRover(new State(command));
+    return new MarsRover(new State(command.getX(), command.getY(), command.getDirection()));
   }
 
   public String process(String commands) {
-    commands.chars().forEach(c ->
-        state.execute(new ExecuteCommand(ExecuteCommand.Action.valueOf(String.valueOf((char) c)))));
+    commands.chars().forEach(c -> {
+      this.state = new ExecuteCommand(String.valueOf((char) c)).execute(state);
+    });
     return this.toString();
   }
 
