@@ -38,7 +38,7 @@ public class ExecuteCommand {
 
   enum Action {
     M(s -> new State(s, Direction.valueOf(s.getDirection()).differential)),
-    L(s -> new State(s, directions.get((directions.indexOf(s.getDirection()) + 3) % directions.size()))),
+    L(s -> new State(s, directions.get((directions.size() + directions.indexOf(s.getDirection()) - 1) % directions.size()))),
     R(s -> new State(s, directions.get((directions.indexOf(s.getDirection()) + 1) % directions.size())));
 
     private Function<State, State> func;
